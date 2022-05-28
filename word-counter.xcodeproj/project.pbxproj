@@ -14,6 +14,10 @@
 		973B3F2128427F6C00F98571 /* word_counterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F2028427F6C00F98571 /* word_counterTests.swift */; };
 		973B3F2B28427F6C00F98571 /* word_counterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F2A28427F6C00F98571 /* word_counterUITests.swift */; };
 		973B3F2D28427F6C00F98571 /* word_counterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F2C28427F6C00F98571 /* word_counterUITestsLaunchTests.swift */; };
+		973B3F3D284282C700F98571 /* consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F3C284282C700F98571 /* consts.swift */; };
+		973B3F3F2842843E00F98571 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F3E2842843E00F98571 /* ModelData.swift */; };
+		973B3F44284290B800F98571 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F43284290B800F98571 /* WordCount.swift */; };
+		973B3F482842955E00F98571 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B3F472842955E00F98571 /* WordList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		973B3F2628427F6C00F98571 /* word-counterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "word-counterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		973B3F2A28427F6C00F98571 /* word_counterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = word_counterUITests.swift; sourceTree = "<group>"; };
 		973B3F2C28427F6C00F98571 /* word_counterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = word_counterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		973B3F3C284282C700F98571 /* consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = consts.swift; sourceTree = "<group>"; };
+		973B3F3E2842843E00F98571 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		973B3F43284290B800F98571 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
+		973B3F472842955E00F98571 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,9 @@
 		973B3F0E28427F6900F98571 /* word-counter */ = {
 			isa = PBXGroup;
 			children = (
+				973B3F3B284282AC00F98571 /* util */,
+				973B3F3A2842829400F98571 /* View */,
+				973B3F392842828D00F98571 /* Model */,
 				973B3F0F28427F6900F98571 /* word_counterApp.swift */,
 				973B3F1128427F6900F98571 /* ContentView.swift */,
 				973B3F1328427F6B00F98571 /* Assets.xcassets */,
@@ -125,6 +136,31 @@
 				973B3F2C28427F6C00F98571 /* word_counterUITestsLaunchTests.swift */,
 			);
 			path = "word-counterUITests";
+			sourceTree = "<group>";
+		};
+		973B3F392842828D00F98571 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				973B3F3E2842843E00F98571 /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		973B3F3A2842829400F98571 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				973B3F43284290B800F98571 /* WordCount.swift */,
+				973B3F472842955E00F98571 /* WordList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		973B3F3B284282AC00F98571 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				973B3F3C284282C700F98571 /* consts.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973B3F44284290B800F98571 /* WordCount.swift in Sources */,
 				973B3F1228427F6900F98571 /* ContentView.swift in Sources */,
+				973B3F3F2842843E00F98571 /* ModelData.swift in Sources */,
 				973B3F1028427F6900F98571 /* word_counterApp.swift in Sources */,
+				973B3F3D284282C700F98571 /* consts.swift in Sources */,
+				973B3F482842955E00F98571 /* WordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
