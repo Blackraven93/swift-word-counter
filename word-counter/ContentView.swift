@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var count: Int = 0
     var body: some View {
-        WordCount()
-        
+        NavigationView {
+            VStack(alignment: .leading, spacing: 8) {
+                Stepper("Current Count: \(count)", value: $count)
+                NavigationLink(
+                    destination: WordList(count: $count),
+                    label: {
+                        Text("Generate")
+                    }
+                )
+            }
+            .padding()
+            .navigationTitle("Counter App")
+        }
     }
 }
 

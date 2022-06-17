@@ -8,13 +8,43 @@
 import SwiftUI
 
 struct WordList: View {
+    @Binding var count: Int
+    @State var words:[String] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Stepper("Count \(count)", value: $count)
+            
+            HStack {
+                
+                Text("text field")
+                
+            }
+            List {
+                ForEach(words, id: \.self) { word in
+                    Text(word)
+                }
+            }
+        }
+    }
+}
+
+struct CreateButton: View {
+    @Binding var text: String
+    var observableTestList: ObservableList
+    
+    var body: some View {
+        Button(action: {
+            self.observableTestList.list.insert(self.text, at: 0)
+            self.text = ""
+        }, label: {
+            Text("Create List")
+        })
     }
 }
 
 struct WordList_Previews: PreviewProvider {
     static var previews: some View {
-        WordList()
+        WordList(count: .constant(5))
     }
 }

@@ -9,14 +9,18 @@ import Foundation
 import SwiftUI
 
 struct Word {
-//    @State var wordList: [String] = []
-    func dataRequest(count:Int) {
-        guard count >= 1 && count <= 15 else { return }
+    func dataRequest(count:Int) throws -> [String]? {
+        var result:[String]?
+        guard count >= 1 && count <= 15 else {
+            throw fatalError("Count Error")
+        }
         
         let urlString: String = "https://random-word-api.herokuapp.com/word?number=\(count)"
         let session = URLSession(configuration: .default)
         let urlComponents = URLComponents(string: urlString)
-        guard let requestURL =  urlComponents?.url else { return }
+        guard let requestURL =  urlComponents?.url else {
+            throw fatalError("urlComponent Error")
+        }
         
         let dataTask =  session.dataTask(with: requestURL) { (data, response, error) in
             
@@ -32,15 +36,13 @@ struct Word {
             // response 데이터 획득, utf8인코딩을 통해 string형태로 변환
             guard let resultData = data else { return }
             
-            print(self.parse(resultData))
-            
-//            let resultString = String(data: resultData, encoding: .utf8)
-//            print(resultData)
-//            return resultString
-            
+            result = self.parse(resultData)
+            // MARK: data까지는 확실하게 가져오는데.. 왜 값으로 가져오지 못하지 ㅠㅠ
+            print(result)
         }
-        
         dataTask.resume()
+        
+        return result
     }
     
     func parse(_ data: Data) -> [String] {
@@ -52,5 +54,10 @@ struct Word {
        }
     }
 }
+
+class ObservableList: ObservableObject {
+    @Published var list: [String] = []
+}
+
 
 
